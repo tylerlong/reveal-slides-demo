@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { auto } from 'manate/react';
 import Reveal from 'reveal.js';
 import { createPortal } from 'react-dom';
+import Hightlight from 'reveal.js/plugin/highlight/highlight.esm';
 
 import type { Store } from './store';
 import Markdown from './markdown';
@@ -9,7 +10,9 @@ import Markdown from './markdown';
 const App = (props: { store: Store }) => {
   const { store } = props;
   useEffect(() => {
-    const deck = new Reveal({});
+    const deck = new Reveal({
+      plugins: [Hightlight],
+    });
     deck.initialize();
     return () => {
       // for strictMode, ref: https://github.com/hakimel/reveal.js/issues/3593
@@ -31,11 +34,20 @@ const App = (props: { store: Store }) => {
           <div className="slides">
             <Markdown
               markdown={`
-# Slide ${store.count}
+# Slide 1
 A paragraph with some text and a [link](https://hakim.se).
+
+\`\`\`ts
+const a = 1;
+console.log(a);
+\`\`\`
+
 ---
-### Slide 2
+
+# Slide 2
+
 ---
+
 # Slide 3
               `}
             />
