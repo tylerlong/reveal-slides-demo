@@ -3,10 +3,12 @@
 
 ## Notes
 
-I find that it is hard to make markdown work with react.js.
-You need to write markdown in HTML instead of in JSX, otherwise it doesn't work.
+```ts
+import { createPortal } from 'react-dom';
+```
+必须得用上面这个, 否则 react 不能正常工作.
 
-即使没有 markdown, 也是一样的现象. 需要在html中写 presentation 的内容, 而不是在 jsx 中写.
+markdown 内部的 useState 是不能动态更新的. 不用markdown的话就可以.
 
 - ref: https://shotstack.io/learn/use-ffmpeg-to-convert-images-to-video/
 - ref https://revealjs.com/installation/
