@@ -10,6 +10,7 @@
   "devDependencies": {
     "@types/node": "^20.14.11",
     "@types/react-dom": "^18.3.0",
+    "@types/reveal.js": "^5.0.3",
     "@typescript-eslint/eslint-plugin": "^7.16.1",
     "@typescript-eslint/parser": "^7.16.1",
     "antd": "^5.19.3",
@@ -25,6 +26,7 @@
     "process": "^0.11.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "reveal.js": "^5.1.0",
     "sort-package-json": "^2.10.0",
     "tsx": "^4.16.2",
     "ttpt": "^0.9.6",

@@ -1,35 +1,22 @@
-import React from 'react';
-import { Button, Space, Typography } from 'antd';
+import React, { useEffect } from 'react';
 import { auto } from 'manate/react';
+
+import Reveal from 'reveal.js';
+import Markdown from 'reveal.js/plugin/markdown/markdown.esm.js';
 
 import type { Store } from './store';
 
-const { Text, Title } = Typography;
+const deck = new Reveal({
+  plugins: [Markdown],
+});
+deck.initialize();
 
 const App = (props: { store: Store }) => {
-  const { store } = props;
-  const render = () => (
-    <>
-      <Title>Untitled App</Title>
-      <Space>
-        <Button
-          onClick={() => {
-            store.count -= 1;
-          }}
-        >
-          -
-        </Button>
-        <Text>{store.count}</Text>
-        <Button
-          onClick={() => {
-            store.count += 1;
-          }}
-        >
-          +
-        </Button>
-      </Space>
-    </>
-  );
+  // useEffect(() => {
+  //   deck.initialize();
+  //   return () => deck.destroy();
+  // }, []);
+  const render = () => <div className="reveal" />;
   return auto(render, props);
 };
 

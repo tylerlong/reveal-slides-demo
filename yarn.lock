@@ -1232,6 +1232,11 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
+"@types/reveal.js@^5.0.3":
+  version "5.0.3"
+  resolved "https://registry.npmjs.org/@types/reveal.js/-/reveal.js-5.0.3.tgz#3d53723d1a959027af4270888c84fb0f9e189acb"
+  integrity sha512-gwnK8TR38IOBIORWFrV5/z9lRX4iLke2FBqNgRhXxehaWJFkrzVY2TVzfdX/SX94eugt+OI5l++zDBBSfdzruQ==
+
 "@typescript-eslint/eslint-plugin@^7.16.1":
   version "7.16.1"
   resolved "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-7.16.1.tgz#f5f5da52db674b1f2cdb9d5f3644e5b2ec750465"
@@ -3707,6 +3712,11 @@ reusify@^1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/reusify/-/reusify-1.0.4.tgz#90da382b1e126efc02146e90845a88db12925d76"
   integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
+
+reveal.js@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.npmjs.org/reveal.js/-/reveal.js-5.1.0.tgz#dfaa4631127e739aa8ebbaa425d653e72d799e66"
+  integrity sha512-KDt7m0+xwKV6nAZt4CNPVFBf42sTKRQapg0bGGKB5PKO5XvChnMfwlZkybydHiQJ7p5+6LbHKRGrhXODdoNIaA==
 
 rimraf@^3.0.2:
   version "3.0.2"
