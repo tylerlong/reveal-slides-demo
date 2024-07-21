@@ -1,30 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { auto } from 'manate/react';
-
 import Reveal from 'reveal.js';
-
-import type { Store } from './store';
 import { createPortal } from 'react-dom';
 
+import type { Store } from './store';
+
 const App = (props: { store: Store }) => {
+  const { store } = props;
   useEffect(() => {
     const deck = new Reveal({});
-    const main = async () => {
-      await deck.initialize();
-      deck.sync();
-    };
-    main();
+    deck.initialize();
     return () => {
-      // ref: https://github.com/hakimel/reveal.js/issues/3593
+      // for strictMode, ref: https://github.com/hakimel/reveal.js/issues/3593
       if (deck.isReady()) {
         deck.destroy();
       }
     };
   }, []);
-  const [counter, setCounter] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
-      setCounter((prev) => prev + 1);
+      store.count += 1;
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -34,7 +29,7 @@ const App = (props: { store: Store }) => {
         <div className="reveal">
           <div className="slides">
             <section>
-              <h1>Slide {counter}</h1>
+              <h1>Slide {store.count}</h1>
               <p>
                 A paragraph with some text and a <a href="https://hakim.se">link</a>.
               </p>
