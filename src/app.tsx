@@ -6,17 +6,20 @@ import Markdown from 'reveal.js/plugin/markdown/markdown.esm.js';
 
 import type { Store } from './store';
 
-const deck = new Reveal({
-  plugins: [Markdown],
-});
-deck.initialize();
-
 const App = (props: { store: Store }) => {
-  // useEffect(() => {
-  //   deck.initialize();
-  //   return () => deck.destroy();
-  // }, []);
-  const render = () => <div className="reveal" />;
+  useEffect(() => {
+    const deck = new Reveal({
+      plugins: [Markdown],
+    });
+    deck.initialize();
+    return () => {
+      // ref: https://github.com/hakimel/reveal.js/issues/3593
+      if (deck.isReady()) {
+        deck.destroy();
+      }
+    };
+  }, []);
+  const render = () => <div />;
   return auto(render, props);
 };
 
