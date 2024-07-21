@@ -4,6 +4,7 @@ import Reveal from 'reveal.js';
 import { createPortal } from 'react-dom';
 
 import type { Store } from './store';
+import Markdown from './markdown';
 
 const App = (props: { store: Store }) => {
   const { store } = props;
@@ -28,18 +29,16 @@ const App = (props: { store: Store }) => {
       {createPortal(
         <div className="reveal">
           <div className="slides">
-            <section>
-              <h1>Slide {store.count}</h1>
-              <p>
-                A paragraph with some text and a <a href="https://hakim.se">link</a>.
-              </p>
-            </section>
-            <section>
-              <h1>Slide 2</h1>
-            </section>
-            <section>
-              <h1>Slide 3</h1>
-            </section>
+            <Markdown
+              markdown={`
+# Slide ${store.count}
+A paragraph with some text and a [link](https://hakim.se).
+---
+### Slide 2
+---
+# Slide 3
+              `}
+            />
           </div>
         </div>,
         document.body,
